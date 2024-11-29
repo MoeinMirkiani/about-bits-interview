@@ -1,14 +1,19 @@
-import PageHeading from "./components/PageHeading.tsx"
+// import Search from './components/Search.tsx'
+// import PageHeading from "./components/PageHeading.tsx"
+import {
+    Route,
+    createBrowserRouter,
+    createRoutesFromElements,
+    RouterProvider
+} from 'react-router-dom'
+
+const router = createBrowserRouter(
+    createRoutesFromElements(<Route index element={<h1>My App</h1>} />)
+)
 
 const App = () => {
     return (
-        <>
-            <div className="container mx-auto py-6 px-4 lg:py-16">
-                <PageHeading>
-                    <h1 className="text-heading-medium text-primary-950">Artworks</h1>
-                </PageHeading>
-            </div>
-        </>
+        <RouterProvider router={router} />
     )
 }
 
