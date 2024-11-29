@@ -1,5 +1,4 @@
-// import Search from './components/Search.tsx'
-// import PageHeading from "./components/PageHeading.tsx"
+import HomePage from "./pages/HomePage.tsx"
 import {
     Route,
     createBrowserRouter,
@@ -8,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 const router = createBrowserRouter(
-    createRoutesFromElements(<Route index element={<h1>My App</h1>} />)
+    createRoutesFromElements(<Route index element={<HomePage />} />)
 )
 
 const App = () => {
