@@ -1,4 +1,5 @@
 import HomePage from "./pages/HomePage.tsx"
+import ArtworkPage from "./pages/ArtworkPage.tsx"
 import {
     Route,
     createBrowserRouter,
@@ -7,7 +8,12 @@ import {
 } from 'react-router-dom'
 
 const router = createBrowserRouter(
-    createRoutesFromElements(<Route index element={<HomePage />} />)
+    createRoutesFromElements(
+        <Route>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/artworks/:id" element={<ArtworkPage />} />
+        </Route>
+    )
 )
 
 const App = () => {
