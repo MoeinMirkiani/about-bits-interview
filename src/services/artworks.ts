@@ -27,9 +27,10 @@ interface ApiResponse {
     data: Artwork[]
 }
 
-const listArtworks = async (page: number = 1): Promise<ApiResponse> => {
+const listArtworks = async (page: number, query: string): Promise<ApiResponse> => {
     try {
-        const response: AxiosResponse<ApiResponse> = await apiClient.get(`/artworks?page=${page}`)
+        const endpoint = query ? `artworks/search?q=${query}&page=${page}` : `artworks?page=${page}`
+        const response: AxiosResponse<ApiResponse> = await apiClient.get(endpoint)
         return response.data
     } catch (error) {
         throw new Error(`Error fetching artworks: ${error}`)
