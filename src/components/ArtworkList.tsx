@@ -26,7 +26,7 @@ const ArtworksList: React.FC = () => {
     return (
         <div className="overflow-hidden bg-white border border-neutral-200 rounded-xl">
             <ul className="divide-y divide-primary-500-0.1">
-                {artworks.map((artwork) => (
+                {artworks.map(artwork => (
                     <ArtworkListItem key={artwork.id} artwork={artwork}/>
                 ))}
             </ul>
