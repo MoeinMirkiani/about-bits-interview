@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom"
 import { listArtworks, type Artwork } from '../services/artworks.ts'
+import ArtworkListItem from "./ArtworkListItem.tsx"
 
 const ArtworksList: React.FC = () => {
     const [artworks, setArtworks] = useState<Artwork[]>([])
@@ -17,17 +17,11 @@ const ArtworksList: React.FC = () => {
     }, [])
 
     return (
-        <div className="bg-white border border-neutral-200 rounded-xl">
-            <ul>
-                {artworks.map((artwork) => (
-                    <li key={artwork.id}>
-                        <Link to={`/artworks/${artwork.id}`}>
-                            {artwork.title}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
+        <ul className="overflow-hidden bg-white border border-neutral-200 rounded-xl divide-y divide-primary-500-0.1">
+            {artworks.map((artwork) => (
+                <ArtworkListItem key={artwork.id} artwork={artwork}/>
+            ))}
+        </ul>
     )
 }
 

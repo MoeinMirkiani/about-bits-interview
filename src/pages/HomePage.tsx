@@ -12,7 +12,7 @@ const HomePage = () => {
 
                 <div className="flex flex-col justify-items-center my-2 lg:flex-row lg:items-center lg:justify-between lg:mt-4">
                     <h6 className="text-title-medium text-primary-950 my-4 lg:my-0">List of Artworks</h6>
-                    <Search queryParam="keyword"/>
+                    <Search queryParam="search"/>
                 </div>
 
                 <ArtworkList />
