@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios'
 
 const apiClient: AxiosInstance = axios.create({
-    baseURL: 'https://api.artic.edu/api/v1/',
+    baseURL: import.meta.env.VITE_BASE_URL,
     headers: {
         'Content-Type': 'application/json'
     }
